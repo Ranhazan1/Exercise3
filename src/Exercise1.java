@@ -10,11 +10,11 @@ public class Exercise1 {
           //  System.out.println(newArr[i]);
         System.out.println(checkNumber(newArr));
         }
-        public static int indexOfSmallest(int[] numberArray) {
-            for (int i = 0; i < numberArray.length; i++) {
+        //public static int indexOfSmallest(int[] numberArray) {
+           // for (int i = 0; i < numberArray.length; i++) {
 
-            }
-        }
+            //}
+        //}
 
     public static boolean checkNumber(int[] numberArray) {
         boolean isAlternateNumber=true ;
