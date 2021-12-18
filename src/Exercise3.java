@@ -1,6 +1,6 @@
 public class Exercise3 {
     public static void main(String[] args) {
-        int number=75;
+        int number=12348765;
         int[] newArray=factorization(number);
         for (int i=0;i<newArray.length;i++){
             System.out.println(newArray[i]);
