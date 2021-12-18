@@ -1,7 +1,7 @@
 public class Exercise4 {
     public static void main(String[] args) {
-        int[] arrayOffNumbers={4,5,6,7,8,9};
-        boolean full=sortedFullArray(arrayOffNumbers);
+        int[] arrayOffNumbers={4,5,7,6,8,9};
+        boolean full=isFullArray(arrayOffNumbers);
         System.out.println(full);
     }
     public static int lowestIndex(int[] arrayOffNumbers){
