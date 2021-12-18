@@ -29,9 +29,8 @@ public class Exercise9 {
                 break;
             }
             triesRemaining--;
-            while (difficult!=-1) {
+            if (difficult!=-1) {
                 System.out.println("tries left: " + triesRemaining);
-                break;
             }if (triesRemaining==0){
                 System.out.println("you lose");
                 System.out.println("the passcode is: ");
@@ -43,7 +42,7 @@ public class Exercise9 {
     public static int[] passcode() {
         Random random = new Random();
         int[] passcode = new int[4];
-        int number=0;
+        int number;
         for (int i = 0; i < passcode.length; i++) {
             do {
                 number = random.nextInt(6) + 1;
@@ -77,7 +76,7 @@ public class Exercise9 {
         boolean checkUserInput=true;
         for (int i=0;i<userInput.length;i++){
             for (int j=0;j<userInput.length;j++) {
-                while (i != j) {
+                if (i != j) {
                     if (userInput[i] == userInput[j]) {
                         checkUserInput = false;
                     }break;
@@ -90,13 +89,12 @@ public class Exercise9 {
 
     public static int getUserDifficult(){
         Scanner scanner=new Scanner(System.in);
-        Random random=new Random();
         System.out.println("choose your game difficult");
         System.out.println("1-the easy way-20 chances to guess the code");
         System.out.println("2-the medium way-15 chances to guess the code");
         System.out.println("3-the hard way-only 10 chances to guess the code");
         System.out.println("4-surprise me-a number between 5-25 will pick randomly");
-        int userChoice=0;
+        int userChoice;
         int numberOffChances=0;
         do {
             userChoice=scanner.nextInt();
@@ -144,7 +142,7 @@ public class Exercise9 {
         int partialGuesses=0;
         for (int i=0;i<passcode.length;i++){
             for (int j=0;j<userPasscode.length;j++){
-                while(i!=j){
+                if(i!=j){
                     if (passcode[i]==userPasscode[j]){
                         partialGuesses++;
                     }break;
