@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class Exercise1 {
     public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("enter a number");
+        int number= scanner.nextInt();
+        System.out.println(checkNumber(intToArray(number)));
         int[] newArray={14,25,36,13,12};
         System.out.println(indexOfSmallest(newArray));
         }
