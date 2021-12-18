@@ -2,23 +2,37 @@ import java.util.Scanner;
 
 public class Exercise1 {
     public static void main(String[] args) {
-        System.out.println("enter a number");
-        Scanner scanner=new Scanner(System.in);
-        int number= scanner.nextInt();
-        int[] newArr=intToArray(number);
-       // for (int i=0;i<newArr.length;i++){
-          //  System.out.println(newArr[i]);
-        System.out.println(checkNumber(newArr));
+        int[] newArray={14,25,36,13,12};
+        System.out.println(indexOfSmallest(newArray));
         }
-        //public static int indexOfSmallest(int[] numberArray) {
-           // for (int i = 0; i < numberArray.length; i++) {
 
-            //}
-        //}
+        public static int indexOfSmallest(int[] numberArray) {
+        int[] arrayOffSums=new int[numberArray.length];
+        int sum=0;
+            for (int i = 0; i < numberArray.length; i++) {
+                sum=0;
+                int[] newArray = intToArray(numberArray[i]);
+                boolean check=checkNumber(newArray);
+                if (check){
+                    for (int j=0;j<newArray.length;j++){
+                        sum+=newArray[j];
+                    }
+                }arrayOffSums[i]=sum;
+            }int indexOffSmallest=0;
+            if (arrayOffSums[indexOffSmallest]==0){
+                indexOffSmallest++;
+            }
+            for (int i=0;i<arrayOffSums.length;i++){
+                if (arrayOffSums[indexOffSmallest]>arrayOffSums[i]){
+                    if (arrayOffSums[i]!=0) {
+                        indexOffSmallest = i;
+                    }
+                }
+            }return indexOffSmallest;
+        }
 
     public static boolean checkNumber(int[] numberArray) {
         boolean isAlternateNumber=true ;
-        int modulo;
         if (numberArray.length != 1) {
             for (int i=1;i<numberArray.length;i++){
                 if (isEven(numberArray[i])==isEven(numberArray[i-1])){
