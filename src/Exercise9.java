@@ -34,6 +34,8 @@ public class Exercise9 {
                 break;
             }if (triesRemaining==0){
                 System.out.println("you lose");
+                System.out.println("the passcode is: ");
+                printPasscode(passcode);
             }
         }
     }
