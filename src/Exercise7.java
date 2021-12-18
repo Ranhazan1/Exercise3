@@ -5,13 +5,15 @@ public class Exercise7 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter a quadratic equation");
         String equation = scanner.nextLine();
-        System.out.println(inputIsCorrect(equation));
-        System.out.println(getA(equation));
-        int a,b,c;
-        a=getA(equation);
-        b=getB(equation);
-        c=getC(equation);
-        System.out.println(a+" "+b+" "+c);
+        if (inputIsCorrect(equation)) {
+            int a, b, c;
+            a = getA(equation);
+            b = getB(equation);
+            c = getC(equation);
+            quadraticEquation(a, b, c);
+        }else {
+            System.out.println("format is illegal");
+        }
     }
 
     public static boolean inputIsCorrect(String equation) {
@@ -92,6 +94,22 @@ public class Exercise7 {
                     c = equation.charAt(8) - 48;
                 }
             }return c;
+    }
+    public static void quadraticEquation(int a,int b,int c){
+        int discriminant=(b*b)-(4*a*c);
+        if (discriminant>0){
+            System.out.println("There are 2 solutions");
+            double sqrt1=((-b)+(Math.sqrt(discriminant)))/2*a;
+            System.out.println("answer 1 is "+sqrt1);
+            double sqrt2=((-b)-(Math.sqrt(discriminant)))/2*a;
+            System.out.println("answer 2 is "+sqrt2);
+        }else if (discriminant==0){
+            System.out.println("There is 1 solution");
+            double sqrt1=((-b)+(Math.sqrt(discriminant)))/2*a;
+            System.out.println("answer 1 is "+sqrt1);
+        }else{
+            System.out.println("There is no solutions");
+        }
     }
 }
 
